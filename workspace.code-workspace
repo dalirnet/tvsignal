@@ -1,0 +1,23 @@
+{
+    "folders": [
+        {
+            "path": "dist"
+        },
+        {
+            "path": "src"
+        },
+        {
+            "path": "test"
+        },
+        {
+            "path": "."
+        }
+    ],
+    "settings": {
+        "files.exclude": {
+            "**/.git": true,
+            "**/node_modules": true
+        },
+        "docwriter.style": "JSDoc"
+    }
+}

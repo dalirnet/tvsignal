@@ -1,0 +1,6 @@
+{
+    "jest.jestCommandLine": "yarn test",
+    "docthis.includeDescriptionTag": true,
+    "docthis.inferTypesFromNames": true,
+    "docthis.returnsTag": true
+}

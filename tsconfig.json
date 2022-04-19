@@ -1,0 +1,12 @@
+{
+    "exclude": ["node_modules", "dist", "test", "cli.js"],
+    "compilerOptions": {
+        "rootDir": "src",
+        "outDir": "dist",
+        "target": "ES6",
+        "declaration": true,
+        "esModuleInterop": true,
+        "moduleResolution": "Node",
+        "declarationDir": "."
+    }
+}
