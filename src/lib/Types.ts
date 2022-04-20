@@ -89,6 +89,7 @@ export type IdeaTypes = {
     link: string
     image: string
     author: string | UserTypes
+    caption: string
 }
 
 /**
