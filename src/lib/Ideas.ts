@@ -55,6 +55,7 @@ export class Ideas extends Request {
      * @name schema
      * @kind property
      * @memberof Ideas
+     * @static
      * @type {RawConfig}
      */
     static schema: RawConfig = {
@@ -74,9 +75,6 @@ export class Ideas extends Request {
                     link: {
                         selector: "div.tv-widget-idea__title-row a",
                         attr: "href",
-                        custom(link: string) {
-                            return "https://www.tradingview.com" + link
-                        },
                     },
                     image: {
                         selector: "img.tv-widget-idea__cover",
@@ -100,6 +98,7 @@ export class Ideas extends Request {
      * @name get
      * @kind method
      * @memberof Ideas
+     * @static
      * @param {IdeaFilterTypes} filter?
      * @returns {Promise<IdeaTypes[]>}
      */

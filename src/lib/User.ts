@@ -83,6 +83,7 @@ export class User extends Request {
      * @name info
      * @kind method
      * @memberof User
+     * @static
      * @param {UserTypes["username"]} username
      * @returns {Promise<UserTypes>}
      */

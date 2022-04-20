@@ -16,22 +16,40 @@ export type UserTypes = {
     reputation: number
 }
 
-/**
- * Exporting a type called UserInfoResponseTypes.
- *
- * @typedef
- * @name UserInfoResponseTypes
- * @kind variable
- * @exports
- */
-export type UserInfoResponseTypes = {
-    id: number
-    username: string
-    big_picture_url: string
-    is_pro: boolean
-    followers_count: number
-    charts_count: number
-    reputation: number
+export type ChartLinkType = string
+
+export type ChartSourceTypes = {
+    sources: ChartSourceDetailTypes[]
+}
+
+export type ChartSourceDetailTypes = {
+    type: "MainSeries" | "LineToolRiskRewardLong" | "LineToolRiskRewardShort"
+    symbolInfo?: {
+        name?: string
+        exchange?: string
+        base_currency?: string
+        currency_code?: string
+        pricescale?: number
+    }
+    state?: {
+        interval?: string
+        stopLevel?: number
+        profitLevel?: number
+    }
+    indexes?: [{ price?: number }, { time?: string }]
+}
+
+export type ChartSignalTypes = {
+    symbol?: string
+    base?: string
+    quote?: string
+    exchange?: string
+    entryPrice?: number
+    target?: number
+    stoploss?: number
+    side?: "SHORT" | "LONG"
+    timeframe?: string
+    expireAt?: Date
 }
 
 /**
@@ -45,7 +63,7 @@ export type UserInfoResponseTypes = {
 export type IdeaTypes = {
     title: string
     symbol: string
-    side: "SHORT" | "LONG"
+    side: ChartSignalTypes["side"]
     link: string
     image: string
     author: string | UserTypes
@@ -73,4 +91,22 @@ export type IdeaFilterTypes = {
     side?: IdeaTypes["side"]
     symbol?: IdeaTypes["symbol"][]
     author?: UserFilterTypes
+}
+
+/**
+ * Exporting a type called UserInfoResponseTypes.
+ *
+ * @typedef
+ * @name UserInfoResponseTypes
+ * @kind variable
+ * @exports
+ */
+export type UserInfoResponseTypes = {
+    id: number
+    username: string
+    big_picture_url: string
+    is_pro: boolean
+    followers_count: number
+    charts_count: number
+    reputation: number
 }
