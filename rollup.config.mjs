@@ -11,7 +11,7 @@ if (isProduction) {
 export default [
     {
         input: "src/index.ts",
-        external: ["lodash", "axios", "muninn"],
+        external: ["axios", "muninn"],
         plugins: rollupPlugins,
         output: [
             {
@@ -21,18 +21,6 @@ export default [
             },
             {
                 file: "dist/index.cjs",
-                format: "cjs",
-                compact: isProduction,
-            },
-        ],
-    },
-    {
-        input: "src/cli.ts",
-        external: ["lodash", "yargs"],
-        plugins: rollupPlugins,
-        output: [
-            {
-                file: "dist/cli.cjs",
                 format: "cjs",
                 compact: isProduction,
             },

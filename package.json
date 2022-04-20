@@ -4,9 +4,6 @@
     "description": "TradingView signal reader",
     "main": "src/index.ts",
     "types": "dist",
-    "bin": {
-        "tvsignal": "cli.js"
-    },
     "exports": {
         ".": {
             "import": "./dist/index.mjs",
@@ -37,7 +34,6 @@
     },
     "dependencies": {
         "axios": "^0.26.1",
-        "muninn": "^0.4.1",
-        "yargs": "^17.3.1"
+        "muninn": "^0.4.1"
     }
 }

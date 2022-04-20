@@ -16,12 +16,26 @@ export type UserTypes = {
     reputation: number
 }
 
-export type ChartLinkType = string
-
+/**
+ * Exporting a type called ChartSourceTypes.
+ *
+ * @typedef
+ * @name ChartSourceTypes
+ * @kind variable
+ * @exports
+ */
 export type ChartSourceTypes = {
     sources: ChartSourceDetailTypes[]
 }
 
+/**
+ * Exporting a type called ChartSourceDetailTypes.
+ *
+ * @typedef
+ * @name ChartSourceDetailTypes
+ * @kind variable
+ * @exports
+ */
 export type ChartSourceDetailTypes = {
     type: "MainSeries" | "LineToolRiskRewardLong" | "LineToolRiskRewardShort"
     symbolInfo?: {
@@ -39,6 +53,14 @@ export type ChartSourceDetailTypes = {
     indexes?: [{ price?: number }, { time?: string }]
 }
 
+/**
+ * Exporting a type called ChartSignalTypes.
+ *
+ * @typedef
+ * @name ChartSignalTypes
+ * @kind variable
+ * @exports
+ */
 export type ChartSignalTypes = {
     symbol?: string
     base?: string

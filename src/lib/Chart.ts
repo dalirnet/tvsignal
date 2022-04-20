@@ -1,7 +1,7 @@
-import { AxiosRequestConfig, Method } from "axios"
+import { AxiosRequestConfig } from "axios"
 import { parse } from "muninn"
 import { RawConfig } from "muninn/src/config/types"
-import { ChartLinkType, ChartSignalTypes, ChartSourceDetailTypes, ChartSourceTypes } from "./Types"
+import { ChartSignalTypes, ChartSourceDetailTypes, ChartSourceTypes } from "./Types"
 import { Request } from "./Request"
 
 /**
@@ -19,33 +19,11 @@ export class Chart extends Request {
      *
      * @constructor
      * @name Chart
-     * @param {ChartLinkType} link
+     * @param {string} url
      * @param {AxiosRequestConfig} config?
      */
-    constructor(link: ChartLinkType, config: AxiosRequestConfig = {}) {
-        /**
-         * Defining the url of the request.
-         *
-         * @constant
-         * @name url
-         * @kind variable
-         * @memberof Chart.constructor
-         * @type {string}
-         */
-        const url: string = `https://www.tradingview.com${link}`
-
-        /**
-         * Defining the method of the request.
-         *
-         * @constant
-         * @name method
-         * @kind variable
-         * @memberof Chart.constructor
-         * @type {Method}
-         */
-        const method: Method = "GET"
-
-        super(url, method, config)
+    constructor(url: string, config: AxiosRequestConfig = {}) {
+        super(url, "GET", config)
     }
 
     /**
@@ -86,10 +64,10 @@ export class Chart extends Request {
      * @kind method
      * @memberof Chart
      * @static
-     * @param {ChartLinkType} link
+     * @param {string} url
      * @returns {Promise<ChartSignalTypes>}
      */
-    static async signal(link: ChartLinkType): Promise<ChartSignalTypes> {
+    static async signal(url: string): Promise<ChartSignalTypes> {
         /**
          * Creating a new instance of the class.
          *
@@ -100,7 +78,7 @@ export class Chart extends Request {
          * @instance
          * @type {Chart}
          */
-        const request: Chart = new this(link)
+        const request: Chart = new this(url)
 
         try {
             /**

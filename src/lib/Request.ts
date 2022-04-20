@@ -32,6 +32,11 @@ export class Request extends Axios {
         let axiosConfig: AxiosRequestConfig = { ...config, url, method }
 
         /**
+         * Adding base url.
+         */
+        axiosConfig.baseURL = config.baseURL ?? "https://www.tradingview.com/"
+
+        /**
          * Adding user agent to headers.
          */
         axiosConfig.headers = {

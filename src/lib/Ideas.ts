@@ -1,4 +1,4 @@
-import { AxiosRequestConfig, Method } from "axios"
+import { AxiosRequestConfig } from "axios"
 import { parse } from "muninn"
 import { RawConfig } from "muninn/src/config/types"
 import { IdeaFilterTypes, IdeaTypes } from "./Types"
@@ -23,29 +23,7 @@ export class Ideas extends Request {
      * @param {AxiosRequestConfig} config?
      */
     constructor(config: AxiosRequestConfig = {}) {
-        /**
-         * Defining the url of the request.
-         *
-         * @constant
-         * @name url
-         * @kind variable
-         * @memberof Ideas.constructor
-         * @type {string}
-         */
-        const url: string = "https://www.tradingview.com/ideas/?sort=recent&video=no"
-
-        /**
-         * Defining the method of the request.
-         *
-         * @constant
-         * @name method
-         * @kind variable
-         * @memberof Ideas.constructor
-         * @type {Method}
-         */
-        const method: Method = "GET"
-
-        super(url, method, config)
+        super("/ideas/?sort=recent&video=no", "GET", config)
     }
 
     /**
