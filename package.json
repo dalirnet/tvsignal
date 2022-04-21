@@ -1,7 +1,7 @@
 {
     "name": "tvsignal",
     "version": "1.0.0",
-    "description": "TradingView signal reader",
+    "description": "TradingView idea & signal parser",
     "main": "src/index.ts",
     "types": "dist",
     "exports": {
