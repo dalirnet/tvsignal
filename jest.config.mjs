@@ -1,5 +1,6 @@
 export default {
-    testTimeout: 5000,
+    collectCoverage: true,
+    testTimeout: 60000,
     transform: {
         "\\.ts": "ts-jest",
     },
