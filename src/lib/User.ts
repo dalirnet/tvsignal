@@ -115,8 +115,8 @@ export class User extends Request {
             return {
                 id: data.id,
                 username: data.username,
-                isPro: data.is_pro,
                 avatar: data.big_picture_url,
+                isPro: data.is_pro,
                 charts: data.charts_count,
                 followers: data.followers_count,
                 reputation: data.reputation,

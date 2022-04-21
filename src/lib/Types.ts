@@ -9,8 +9,8 @@
 export type UserTypes = {
     id: number
     username: string
-    isPro: boolean
     avatar: string
+    isPro: boolean
     charts: number
     followers: number
     reputation: number
@@ -88,8 +88,8 @@ export type IdeaTypes = {
     side: ChartSignalTypes["side"]
     link: string
     image: string
-    author: string | UserTypes
     caption: string
+    author: string | UserTypes
 }
 
 /**

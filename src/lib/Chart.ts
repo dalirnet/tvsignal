@@ -162,7 +162,7 @@ export class Chart extends Request {
              */
             const indexes: ChartSourceDetailTypes["indexes"] = findRewardsType?.indexes
 
-            if (symbolInfo && state && indexes && indexes.length === 2) {
+            if (symbolInfo && state && indexes && indexes.length >= 2) {
                 /**
                  * Defining the `signal` variable.
                  *
@@ -177,6 +177,10 @@ export class Chart extends Request {
                     base: symbolInfo.base_currency,
                     quote: symbolInfo.currency_code,
                     exchange: symbolInfo.exchange,
+                }
+
+                if (!signal.base) {
+                    signal.base = signal.symbol.replace(new RegExp(`${signal.quote}$`, "i"), "")
                 }
 
                 if (indexes[0]?.price) {

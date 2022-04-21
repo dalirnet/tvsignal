@@ -58,11 +58,11 @@ export class Ideas extends Request {
                         selector: "img.tv-widget-idea__cover",
                         attr: "data-src",
                     },
+                    caption: "p.tv-widget-idea__description-row",
                     author: {
                         selector: "span.tv-card-user-info a",
                         attr: "data-username",
                     },
-                    caption: "p.tv-widget-idea__description-row",
                 },
             },
         },
