@@ -15,7 +15,7 @@ npm i tvsignal
 ```typescript
 import { Ideas } from "tvsignal"
 
-const ideas = await Ideas.get()
+const ideas = await Ideas.get(/* Filter parameters */)
 
 /**
 
@@ -47,7 +47,7 @@ const ideas = await Ideas.get()
 ```typescript
 import { Chart } from "tvsignal"
 
-const signal = await Chart.signal()
+const signal = await Chart.signal(/* Chart link */)
 
 /**
  

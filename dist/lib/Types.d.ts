@@ -99,7 +99,9 @@ export declare type IdeaTypes = {
  * @kind variable
  * @exports
  */
-export declare type UserFilterTypes = Partial<Pick<UserTypes, "isPro" | "charts" | "followers" | "reputation">>;
+export declare type UserFilterTypes = Partial<Pick<UserTypes, "isPro" | "charts" | "followers" | "reputation">> & {
+    username: UserTypes["username"][];
+};
 /**
  * Creating a type called IdeaFilterTypes.
  *

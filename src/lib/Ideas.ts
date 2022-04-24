@@ -153,6 +153,13 @@ export class Ideas extends Request {
                 }
 
                 /**
+                 * Filters author by username.
+                 */
+                if (filter?.author?.username?.length && filter.author.username.indexOf(idea.author as string) === -1) {
+                    continue
+                }
+
+                /**
                  * It's getting the user information from the `User` class.
                  *
                  * @constant
