@@ -85,9 +85,10 @@ export class User extends Request {
      * @memberof User
      * @static
      * @param {UserTypes["username"]} username
+     * @param {AxiosRequestConfig} config?
      * @returns {Promise<UserTypes>}
      */
-    static async info(username: UserTypes["username"]): Promise<UserTypes> {
+    static async info(username: UserTypes["username"], config: AxiosRequestConfig = {}): Promise<UserTypes> {
         /**
          * Creating a new instance of the class.
          *
@@ -98,7 +99,7 @@ export class User extends Request {
          * @instance
          * @type {User}
          */
-        const request: User = new this(username)
+        const request: User = new this(username, config)
 
         try {
             /**

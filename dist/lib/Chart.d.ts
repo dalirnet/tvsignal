@@ -42,7 +42,8 @@ export declare class Chart extends Request {
      * @memberof Chart
      * @static
      * @param {string} url
+     * @param {AxiosRequestConfig} config?
      * @returns {Promise<ChartSignalTypes>}
      */
-    static signal(url: string): Promise<ChartSignalTypes>;
+    static signal(url: string, config?: AxiosRequestConfig): Promise<ChartSignalTypes>;
 }

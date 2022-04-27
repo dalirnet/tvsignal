@@ -41,7 +41,8 @@ export declare class Ideas extends Request {
      * @memberof Ideas
      * @static
      * @param {IdeaFilterTypes} filter?
+     * @param {AxiosRequestConfig} config?
      * @returns {Promise<IdeaTypes[]>}
      */
-    static get(filter?: IdeaFilterTypes): Promise<IdeaTypes[]>;
+    static get(filter?: IdeaFilterTypes, config?: AxiosRequestConfig): Promise<IdeaTypes[]>;
 }

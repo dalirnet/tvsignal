@@ -65,9 +65,10 @@ export class Chart extends Request {
      * @memberof Chart
      * @static
      * @param {string} url
+     * @param {AxiosRequestConfig} config?
      * @returns {Promise<ChartSignalTypes>}
      */
-    static async signal(url: string): Promise<ChartSignalTypes> {
+    static async signal(url: string, config: AxiosRequestConfig = {}): Promise<ChartSignalTypes> {
         /**
          * Creating a new instance of the class.
          *
@@ -78,7 +79,7 @@ export class Chart extends Request {
          * @instance
          * @type {Chart}
          */
-        const request: Chart = new this(url)
+        const request: Chart = new this(url, config)
 
         try {
             /**

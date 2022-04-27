@@ -30,7 +30,8 @@ export declare class User extends Request {
      * @memberof User
      * @static
      * @param {UserTypes["username"]} username
+     * @param {AxiosRequestConfig} config?
      * @returns {Promise<UserTypes>}
      */
-    static info(username: UserTypes["username"]): Promise<UserTypes>;
+    static info(username: UserTypes["username"], config?: AxiosRequestConfig): Promise<UserTypes>;
 }

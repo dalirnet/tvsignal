@@ -78,9 +78,10 @@ export class Ideas extends Request {
      * @memberof Ideas
      * @static
      * @param {IdeaFilterTypes} filter?
+     * @param {AxiosRequestConfig} config?
      * @returns {Promise<IdeaTypes[]>}
      */
-    static async get(filter?: IdeaFilterTypes): Promise<IdeaTypes[]> {
+    static async get(filter?: IdeaFilterTypes, config: AxiosRequestConfig = {}): Promise<IdeaTypes[]> {
         /**
          * Creating a new instance of the Ideas class.
          *
@@ -91,7 +92,7 @@ export class Ideas extends Request {
          * @instance
          * @type {Ideas}
          */
-        const request: Ideas = new this()
+        const request: Ideas = new this(config)
 
         try {
             /**
