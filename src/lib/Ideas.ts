@@ -156,20 +156,23 @@ export class Ideas extends Request {
                 /**
                  * Filters author by username.
                  */
-                if (filter?.author?.username?.length && filter.author.username.indexOf(idea.author as string) === -1) {
-                    continue
-                }
+                if (filter?.author?.username?.length) {
+                    if (filter.author.username.indexOf(idea.author as string) === -1) {
+                        continue
+                    }
+                } else {
+                    /**
+                     * It's getting the user information from the `User` class.
+                     *
+                     * @constant
+                     * @name idea
+                     * @type {IdeaTypes}
+                     */
+                    idea.author = await User.info(idea.author as string)
+                    if (!idea.author) {
+                        continue
+                    }
 
-                /**
-                 * It's getting the user information from the `User` class.
-                 *
-                 * @constant
-                 * @name idea
-                 * @type {IdeaTypes}
-                 */
-                idea.author = await User.info(idea.author as string)
-
-                if (idea.author) {
                     /**
                      * Filters professional author.
                      */
@@ -197,12 +200,12 @@ export class Ideas extends Request {
                     if (filter?.author?.reputation && idea.author.reputation < filter.author.reputation) {
                         continue
                     }
-
-                    /**
-                     * After passing all filters pushing the idea into the filtered ideas.
-                     */
-                    filteredIdeas.push(idea)
                 }
+
+                /**
+                 * After passing all filters pushing the idea into the filtered ideas.
+                 */
+                filteredIdeas.push(idea)
             }
 
             return filteredIdeas

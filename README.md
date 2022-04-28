@@ -15,11 +15,11 @@ npm i tvsignal
 ```typescript
 import { Ideas } from "tvsignal"
 
-const ideas = await Ideas.get(/* Filter parameters */)
+const ideas = await Ideas.get(/* Filter object */)
 
 /**
 
- ideas = [
+ideas = [
     {
         title: string
         symbol: string
@@ -27,7 +27,7 @@ const ideas = await Ideas.get(/* Filter parameters */)
         link: string
         image: string
         caption: string
-        author: {
+        author: string | {
             id: number
             username: string
             avatar: string
@@ -37,7 +37,7 @@ const ideas = await Ideas.get(/* Filter parameters */)
             reputation: number
         }
     }
- ]
+]
 
 */
 ```
@@ -51,8 +51,8 @@ const signal = await Chart.signal(/* Chart link */)
 
 /**
  
- # When chart includes a signal
- signal = {
+# When chart includes a signal
+signal = {
     symbol: string
     base: string
     quote: string
@@ -63,10 +63,36 @@ const signal = await Chart.signal(/* Chart link */)
     side: "SHORT" | "LONG"
     timeframe: string
     expireAt: Date
- }
+}
+
+# When chart not includes any signal
+signal = null
+
+*/
+```
+
+-   User
+
+```typescript
+import { User } from "tvsignal"
+
+const user = await User.info(/* Username */)
+
+/**
  
- # When chart not includes any signal
- signal = null
+# When the user is found
+user = {
+    id: number
+    username: string
+    avatar: string
+    isPro: boolean
+    charts: number
+    followers: number
+    reputation: number
+}
+ 
+# When the user is not found
+user = null
 
 */
 ```
