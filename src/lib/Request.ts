@@ -29,7 +29,7 @@ export class Request extends axios.Axios {
          * @memberof Request.constructor
          * @type {AxiosRequestConfig}
          */
-        let axiosConfig: AxiosRequestConfig = { ...config, url, method }
+        let axiosConfig: AxiosRequestConfig = { url, method, ...config }
 
         /**
          * Adding base url.
@@ -40,8 +40,8 @@ export class Request extends axios.Axios {
          * Adding user agent to headers.
          */
         axiosConfig.headers = {
-            ...config?.headers,
             "User-Agent": "tvsignal/1.0.1",
+            ...config?.headers,
         }
 
         /**
