@@ -1,4 +1,4 @@
-import { Axios, AxiosRequestConfig, AxiosResponse, Method } from "axios";
+import axios, { AxiosRequestConfig, AxiosResponse, Method } from "axios";
 /**
  * Extending the Axios class.
  *
@@ -8,7 +8,7 @@ import { Axios, AxiosRequestConfig, AxiosResponse, Method } from "axios";
  * @extends Axios
  * @exports
  */
-export declare class Request extends Axios {
+export declare class Request extends axios.Axios {
     /**
      * A constructor for the class.
      *
