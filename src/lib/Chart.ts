@@ -230,6 +230,11 @@ export class Chart extends Request {
                     signal.expireAt = new Date(indexes[1].time)
                 }
 
+                for (const field of ["target", "stoploss", "entryPrice"]) {
+                    signal[field] =
+                        Math.round((signal[field] + Number.EPSILON) * symbolInfo.pricescale) / symbolInfo.pricescale
+                }
+
                 return signal
             }
 
